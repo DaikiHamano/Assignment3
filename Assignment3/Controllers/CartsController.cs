@@ -153,12 +153,5 @@ namespace Assignment3.Controllers
         {
             return _context.Carts.Any(e => e.CartId == id);
         }
-
-
-        //to create checkout method
-        public IActionResult Checkout()
-        {
-            return View();
-        }
     }
 }
