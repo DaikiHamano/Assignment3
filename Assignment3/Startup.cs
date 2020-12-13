@@ -33,6 +33,9 @@ namespace Assignment3
             services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = false)
                 .AddRoles<IdentityRole>()              //to use user auth
                 .AddEntityFrameworkStores<ApplicationDbContext>();
+
+            //add congig support for the order controllor
+            services.AddSingleton<IConfiguration>(Configuration);
             services.AddControllersWithViews();
             services.AddRazorPages();
         }

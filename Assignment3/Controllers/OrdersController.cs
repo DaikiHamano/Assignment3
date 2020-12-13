@@ -9,6 +9,11 @@ using Assignment3.Data;
 using Assignment3.Models;
 using Microsoft.AspNetCore.Authorization;
 
+//for stripe
+using Stripe;
+using System.Configuration;
+using Microsoft.Extensions.Configuration;
+
 namespace Assignment3.Controllers
 {
     //only for a permitted users
@@ -16,10 +21,12 @@ namespace Assignment3.Controllers
     public class OrdersController : Controller
     {
         private readonly ApplicationDbContext _context;
+        IConfiguration _iconfiguration;
 
-        public OrdersController(ApplicationDbContext context)
+        public OrdersController(ApplicationDbContext context, IConfiguration iconfiguration)
         {
             _context = context;
+            _iconfiguration = iconfiguration;
         }
 
         // GET: Orders
@@ -60,7 +67,7 @@ namespace Assignment3.Controllers
         // more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("OrderId,CartId,FirstName,LastName,Address,City,Province,PostalCode,PhoneNumber")] Order order)
+        public async Task<IActionResult> Create([Bind("OrderId,CartId,FirstName,LastName,Address,City,Province,PostalCode,PhoneNumber")] Models.Order order)
         {
             if (ModelState.IsValid)
             {
@@ -94,7 +101,7 @@ namespace Assignment3.Controllers
         // more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("OrderId,CartId,FirstName,LastName,Address,City,Province,PostalCode,PhoneNumber")] Order order)
+        public async Task<IActionResult> Edit(int id, [Bind("OrderId,CartId,FirstName,LastName,Address,City,Province,PostalCode,PhoneNumber")] Models.Order order)
         {
             if (id != order.OrderId)
             {
@@ -158,6 +165,10 @@ namespace Assignment3.Controllers
         private bool OrderExists(int id)
         {
             return _context.Orders.Any(e => e.OrderId == id);
+        }
+
+        public IActionResult Payment() {
+            return View();
         }
     }
 }
