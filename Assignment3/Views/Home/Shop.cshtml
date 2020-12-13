@@ -1,0 +1,80 @@
+﻿<!--to display the title to the title section-->
+@{
+    ViewData["Title"] = "Shop";
+}
+
+<!--to use the css file-->
+<link rel="stylesheet" href="~/css/site.css">
+
+<!--to display the title-->
+<h1>@ViewData["Title"]</h1>
+
+<!--text-center-bootstrap-->
+<div class="text-center">
+    <div class="item">
+        <img src="~/images/tubo.jpg" height="190" width="220">
+        <p>1.Vase</p>
+        <p>Japanese Vase Called TSUBO</p>
+        <p>$100</p>
+        <!--action is ction to do and the item will be the String -->      <!--the number and price to the create page-->
+        <a asp-controller="Carts" asp-action="Create" asp-route-number=1 asp-route-price=100>Add to the cart!!</a>
+        <!--created detail and the action-->
+        <a asp-controller="Home" asp-action="Detail" asp-route-number=1 asp-route-price=100 asp-route-name="Vase" asp-route-data="Japanese Vase Called TSUBO">Detail</a>
+    </div>                       
+    <div class="item">
+        <img src="~/images/kimono.jpg" height="190" width="220">
+        <p>2.Clothes</p>
+        <p>Japanese Super Formal Clothes</p>
+        <p>$300</p>
+        <a asp-controller="Carts" asp-action="Create" asp-route-number=2 asp-route-price=300>Add to the cart!!</a>
+        <a asp-controller="Home" asp-action="Detail" asp-route-number=2 asp-route-price=300 asp-route-name="Clothes" asp-route-data="Japanese Super Formal Clothes">Detail</a>
+    </div>
+    <div class="item">
+        <img src="~/images/manga.jpg" height="190" width="220">
+        <p>3.Book</p>
+        <p>The Most Famous Book In Japan</p>
+        <p>$10</p>
+        <a asp-controller="Carts" asp-action="Create" asp-route-number=3 asp-route-price=10>Add to the cart!!</a>
+        <a asp-controller="Home" asp-action="Detail" asp-route-number=3 asp-route-price=10 asp-route-name="Book" asp-route-data="The Most Famous Book In Japan">Detail</a>
+    </div>
+    <div class="item">
+        <img src="~/images/ninja-t-shirt.jpg" height="190" width="220">
+        <p>4.T-Shirt</p>
+        <p>Kanji-T-Shirt</p>
+        <p>$50</p>
+        <a asp-controller="Carts" asp-action="Create" asp-route-number=4 asp-route-price=50>Add to the cart!!</a>
+        <a asp-controller="Home" asp-action="Detail" asp-route-number=4 asp-route-price=50 asp-route-name="T-Shirt" asp-route-data="Kanji-T-Shirt">Detail</a>
+    </div>
+    <div class="item second">
+        <img src="~/images/chopsticks.jpg" height="190" width="220">
+        <p>5.Chopsticks</p>
+        <p>Google How To Use And Practice!!</p>
+        <p>$25</p>
+        <a asp-controller="Carts" asp-action="Create" asp-route-number=5 asp-route-price=25>Add to the cart!!</a>
+        <a asp-controller="Home" asp-action="Detail" asp-route-number=5 asp-route-price=25 asp-route-name="Chopsticks" asp-route-data="Google How To Use And Practice!!">Detail</a>
+    </div>
+    <div class="item second">
+        <img src="~/images/sake.jpg" height="190" width="220">
+        <p>6.Alcohol</p>
+        <p>Japanese Alcohol</p>
+        <p>$55</p>
+        <a asp-controller="Carts" asp-action="Create" asp-route-number=6 asp-route-price=55>Add to the cart!!</a>
+        <a asp-controller="Home" asp-action="Detail" asp-route-number=6 asp-route-price=55 asp-route-name="Alcohol" asp-route-data="Japanese Alcohol">Detail</a>
+    </div>
+    <div class="item second">
+        <img src="~/images/Sensu.jpg" height="190" width="220">
+        <p>7.Sensu</p>
+        <p>Sensu Is A hand Fan!!</p>
+        <p>$5</p>
+        <a asp-controller="Carts" asp-action="Create" asp-route-number=7 asp-route-price=5>Add to the cart!!</a>
+        <a asp-controller="Home" asp-action="Detail" asp-route-number=7 asp-route-price=5 asp-route-name="Sensu" asp-route-data="Sensu Is A hand Fan!!">Detail</a>
+    </div>
+    <div class="item second">
+        <img src="~/images/starbucks.jpg" height="190" width="220">
+        <p>8.Starbucks Glass</p>
+        <p>Japanese Edition</p>
+        <p>$35</p>
+        <a asp-controller="Carts" asp-action="Create" asp-route-number=8 asp-route-price=35>Add to the cart!!</a>
+        <a asp-controller="Home" asp-action="Detail" asp-route-number=8 asp-route-price=35 asp-route-name="Starbucks Glass" asp-route-data="Japanese Edition">Detail</a>
+    </div>
+</div>

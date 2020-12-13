@@ -1,0 +1,59 @@
+﻿@model IEnumerable<Assignment3.Models.Request>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Color)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Gift)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.AnyOtherRequests)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Cart)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Color)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Gift)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.AnyOtherRequests)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Cart.CartId)
+                </td>
+                <!--only for admin-->
+                @if (User.IsInRole("Administrator"))
+                {
+                    <td>
+                        <a asp-action="Edit" asp-route-id="@item.RequestId">Edit</a> |
+                        <a asp-action="Details" asp-route-id="@item.RequestId">Details</a> |
+                        <a asp-action="Delete" asp-route-id="@item.RequestId">Delete</a>
+                    </td>
+                }
+            </tr>
+        }
+    </tbody>
+</table>

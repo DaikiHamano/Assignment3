@@ -1,0 +1,23 @@
+﻿<!--to display the title to the title section-->
+@{
+    ViewData["Title"] = "Detail";
+}
+
+<!--to use the css file-->
+<link rel="stylesheet" href="~/css/site.css">
+
+
+
+<!--text-center-bootstrap-->
+<div class="text-left">
+    <!--to display the title-->
+    <h1>@ViewData["Title"]</h1>
+    <img src="~/images/cart.jpg" height="190" width="300" />
+    <div class="detail">
+        <p >ProductName<span class="name">@ViewBag.name</span></p>
+        <p >Description<span class="data">@ViewBag.data</span></p>
+        <p class="title">Price<span class="price">$@ViewBag.price</span></p>
+        <a asp-controller="Carts" asp-action="Create" asp-route-number=@ViewBag.number asp-route-price=@ViewBag.price>Add to the cart!!</a>
+        <a asp-controller="Home" asp-action="Shop">Back to List</a>
+    </div>   
+</div>

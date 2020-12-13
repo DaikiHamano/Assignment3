@@ -51,6 +51,77 @@ button.accept-policy {
   line-height: inherit;
 }
 
+/*to use the image to all pages*/
+body {
+    background-image: url("/images/picBlossom.jpg");
+    background-size: cover;
+}
+
+/*to make those image arranged*/
+.item {
+    display: inline-block;
+}
+
+.item a {
+    color: White;
+    border-radius: 10%;
+    background-color: blue;
+}
+
+/*for detail page*/
+.detail ,.cart{
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+.name {
+    margin-left: 33px;
+    border: 2px double;
+    background-color: white;
+    border-radius: 8px;
+    padding:5px;
+    font-weight:normal;
+    font-style:italic;
+    font-family:'MS Mincho';
+}
+
+.data {
+    margin-left: 50px;
+    border: 2px double;
+    background-color: white;
+    border-radius: 8px;
+    padding: 5px;
+    font-weight: normal;
+    font-style: italic;
+    font-family: 'MS Mincho';
+}
+
+.price {
+    margin-left: 100px;
+    border: 2px double;
+    background-color: white;
+    border-radius: 8px;
+    padding: 5px;
+    font-weight: normal;
+    font-style: italic;
+    font-family: 'MS Mincho';
+}
+
+.detail a ,.cart
+{
+    padding: 0 10px;
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 0) 50%, rgb(49, 170, 226) 50%);
+    background-position: 0 0;
+    background-size: 200% auto;
+    transition: .3s;
+    color:black;
+}
+
+.detail a:hover ,.cart:hover{
+    background-position: -100% 0;
+    color: #fff;
+}
+
 /* Sticky footer styles
 -------------------------------------------------- */
 html {
